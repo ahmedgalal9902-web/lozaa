@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 32px 18px;
+  display: grid;
+  place-items: center;
+  color: #49353b;
+  background: radial-gradient(circle at top left, #fff 0, transparent 34%), linear-gradient(135deg, #fff4f5, #f9e6eb);
+  font-family: 'Cairo', 'Tahoma', sans-serif;
+}
+
+.card {
+  position: relative;
+  width: min(100%, 620px);
+  padding: 48px 42px 28px;
+  overflow: hidden;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(230, 174, 188, 0.45);
+  border-radius: 28px;
+  box-shadow: 0 22px 70px rgba(130, 63, 82, 0.12);
+  animation: arrive 700ms ease both;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: #b66b7e;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  color: #a94461;
+  font-size: clamp(1.9rem, 7vw, 3rem);
+  line-height: 1.35;
+}
+
+h1 span,
+.signature span {
+  color: #dc8296;
+}
+
+.intro {
+  max-width: 440px;
+  margin: 16px auto 28px;
+  color: #765e65;
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+.gift-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 12px 24px;
+  color: #fff;
+  background: linear-gradient(135deg, #c95e79, #a94461);
+  border: 0;
+  border-radius: 999px;
+  box-shadow: 0 9px 22px rgba(169, 68, 97, 0.24);
+  font: inherit;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.gift-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(169, 68, 97, 0.3);
+}
+
+.gift-button:focus-visible {
+  outline: 3px solid #e6a6b5;
+  outline-offset: 4px;
+}
+
+.gift-icon {
+  font-size: 1.3rem;
+}
+
+.gift {
+  margin: 30px auto 0;
+  animation: reveal 500ms ease both;
+}
+
+.flower {
+  display: grid;
+  place-items: center;
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 18px;
+  background: #fff1f3;
+  border: 1px solid #f6d7df;
+  border-radius: 50%;
+}
+
+.petal-top {
+  font-size: 3.8rem;
+  filter: drop-shadow(0 5px 5px rgba(139, 40, 64, 0.15));
+}
+
+.letter {
+  padding: 22px 26px;
+  text-align: right;
+  background: #fff9f6;
+  border: 1px solid #f2e4df;
+  border-radius: 18px;
+  color: #59464a;
+  font-size: clamp(1rem, 2.8vw, 1.15rem);
+  line-height: 1.8;
+}
+
+.letter p {
+  margin: 8px 0;
+}
+
+.letter-title {
+  margin-top: 0 !important;
+  color: #a94461;
+  font-size: 1.15em;
+  font-weight: 800;
+  text-align: center;
+}
+
+.signature {
+  margin-bottom: 0 !important;
+  color: #a94461;
+  font-weight: 700;
+  text-align: left;
+}
+
+.footer-note {
+  margin: 26px 0 0;
+  color: #b2868f;
+  font-size: 0.85rem;
+}
+
+.sparkle {
+  position: absolute;
+  color: #e8a7b5;
+  pointer-events: none;
+}
+
+.sparkle-one {
+  top: 28px;
+  left: 32px;
+  font-size: 1.7rem;
+}
+
+.sparkle-two {
+  top: 90px;
+  right: 30px;
+  font-size: 1.3rem;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 520px) {
+  .card {
+    padding: 38px 22px 24px;
+    border-radius: 22px;
+  }
+
+  .letter {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
